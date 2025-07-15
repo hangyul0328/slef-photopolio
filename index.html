@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자기소개서 포트폴리오</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="meteor-canvas"></canvas>
+  <nav style="z-index:2; position:fixed; width:100%;">
+    <div class="nav-container">
+      <div class="nav-left">HAN GYEOL</div>
+      <div class="nav-menu">
+        <a href="#about">소개</a>
+        <a href="#special">특기사항</a>
+        <a href="#portfolio">포트폴리오</a>
+        <a href="#contact">연락처</a>
+      </div>
+      <div class="nav-profile"></div>
+    </div>
+  </nav>
+  <main style="z-index:1; position:relative;">
+    <section id="about" class="fade-in">
+      <h2 class="section-title">소개</h2>
+      <p><span class="typing" id="typing"></span></p>
+    </section>
+    <section id="special" class="fade-in">
+      <h2 class="section-title">특기사항</h2>
+      <ul>
+        <li>cospro 3급 자격증 취득</li>
+        <li>가천대 조기취업학과 진학 목표</li>
+        <li>프로그래밍 및 논리적 사고에 강점</li>
+      </ul>
+    </section>
+    <section id="portfolio" class="fade-in">
+      <h2 class="section-title">포트폴리오</h2>
+      <div class="grid">
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <a href="https://www.notion.so/1908284e0b8f80f6b7bed5b9c91c01ce" target="_blank">
+                <img src="1111.png" alt="Notion 로고">
+              </a>
+              <h3>Notion</h3>
+              <p>반응형 웹사이트 개발</p>
+            </div>
+            <div class="card-back">
+              <h4>Notion 포트폴리오</h4>
+              <p>자세한 내용은 Notion에서 확인하세요.</p>
+              <a href="https://www.notion.so/1908284e0b8f80f6b7bed5b9c91c01ce" target="_blank" class="portfolio-link">바로가기</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <a href="https://github.com/hangyul0328/google-ai-bible.git" target="_blank">
+                <img src="2222.jpeg" alt="디지털 성경">
+              </a>
+              <h3>디지털 성경(영어로)</h3>
+              <p>UI/UX 디자인 개선</p>
+            </div>
+            <div class="card-back">
+              <h4>디지털 성경(영어로)</h4>
+              <p>영어 성경 데이터와 AI 활용 프로젝트.<br>깃허브에서 소스 확인 가능.</p>
+              <a href="https://github.com/hangyul0328/google-ai-bible.git" target="_blank" class="portfolio-link">깃허브 바로가기</a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-inner">
+            <div class="card-front">
+              <img src="https://placehold.co/300x200" alt="프로젝트3">
+              <h3>프로젝트 3</h3>
+              <p>인터랙티브 대시보드 구현</p>
+            </div>
+            <div class="card-back">
+              <h4>프로젝트 3</h4>
+              <p>대시보드, 차트, 인터랙션 등 다양한 기능 구현.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="fade-in">
+      <h2 class="section-title">연락처</h2>
+      <ul class="contact-list">
+        <li><strong>Email:</strong> idkeng1357@Gmail.com</li>
+        <li><strong>전화번호:</strong> 01090626447</li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/yourid" target="_blank">github.com/yourid</a></li>
+        <li><strong>학교:</strong> 광양고등학교 2학년</li>
+        <li><strong>목표:</strong> 가천대 조기취업학과 진학</li>
+        <li><strong>자격증:</strong> cospro 3급</li>
+      </ul>
+    </section>
+  </main>
+  <footer style="z-index:2; position:relative;">
+    <div class="container">
+      &copy; 2024 박한결. All rights reserved.
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html> 

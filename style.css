@@ -1,0 +1,266 @@
+/* 넷플릭스 스타일 전체 리셋 */
+:root {
+  --bg: linear-gradient(135deg, #0a1020 0%, #1a2340 100%);
+  --text: #fff;
+  --accent: #0050ff;
+  --card-bg: #181f2e;
+  --card-shadow: rgba(0,0,0,0.7);
+  --nav-bg: #141a2a;
+}
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans KR', 'Pretendard', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+/* 상단 네비게이션 */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 10;
+  background: var(--nav-bg);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px var(--card-shadow);
+}
+.nav-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+.nav-left {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: -1px;
+  text-shadow: 0 0 4px var(--accent);
+}
+.nav-menu {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+}
+.nav-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  position: relative;
+  text-shadow: 0 0 2px var(--accent);
+}
+.nav-menu a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.2s;
+  position: absolute;
+  left: 0; bottom: -4px;
+  box-shadow: 0 0 4px var(--accent);
+}
+.nav-menu a:hover::after {
+  width: 100%;
+}
+.nav-profile {
+  width: 36px; height: 36px;
+  border-radius: 50%;
+  background: #333 url('https://placehold.co/36x36') center/cover no-repeat;
+  border: 2px solid var(--accent);
+  box-shadow: 0 0 4px var(--accent);
+}
+main {
+  max-width: 1200px;
+  margin: 100px auto 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+section {
+  margin-bottom: 3.5rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 900;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  letter-spacing: -1px;
+  border-left: 8px solid var(--accent);
+  padding-left: 1rem;
+  text-shadow: 0 0 6px var(--accent);
+  background: rgba(0,0,0,0.2);
+  border-radius: 0.5rem;
+}
+/* 카드형 포트폴리오 */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2.2rem;
+  width: 100%;
+  justify-items: center;
+}
+.card {
+  background: var(--card-bg);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px var(--card-shadow), 0 0 8px var(--accent);
+  overflow: hidden;
+  transition: transform 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+  position: relative;
+  min-height: 340px;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card:hover {
+  transform: scale(1.07) translateY(-8px);
+  box-shadow: 0 16px 48px var(--accent), 0 0 16px var(--accent);
+  z-index: 2;
+}
+.card-inner {
+  height: 100%;
+}
+.card-front img, .card-back img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0.7rem 0.7rem 0 0;
+  margin-bottom: 1rem;
+}
+.card-front h3, .card-back h4 {
+  font-size: 1.2rem;
+  color: var(--accent);
+  margin: 0.5rem 0 0.3rem 0;
+  font-weight: 700;
+  text-shadow: 0 0 3px var(--accent);
+  text-align: center;
+}
+.card-front p, .card-back p {
+  color: #b3f6ff;
+  font-size: 1rem;
+  text-align: center;
+}
+.card-back {
+  background: var(--card-bg);
+  color: #fff;
+  text-align: center;
+}
+.portfolio-link {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  min-width: 120px;
+  padding: 0.7rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.2s, box-shadow 0.2s, opacity 0.3s, transform 0.3s;
+  box-shadow: 0 2px 8px var(--accent), 0 0 4px var(--accent);
+  text-shadow: 0 0 4px #fff;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 3;
+}
+.card:hover .portfolio-link {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1.08);
+  pointer-events: auto;
+}
+/* 소개글 타이핑 애니메이션 */
+.typing {
+  display: block;
+  border-right: none;
+  white-space: normal;
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  min-height: 2.2em;
+  max-height: 6.6em;
+  line-height: 1.7;
+  text-overflow: ellipsis;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-align: center;
+  text-shadow: 0 0 8px var(--accent), 0 0 16px var(--accent);
+}
+.typing.caret {
+  border-right: 2px solid var(--accent);
+  animation: blink-caret 0.7s step-end infinite;
+}
+/* 특기사항 리스트 */
+#special ul {
+  padding: 0 0 0 1.2rem;
+  color: #fff;
+  font-size: 1.1rem;
+  text-align: center;
+}
+.contact-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #fff;
+  text-align: center;
+}
+.contact-list li {
+  margin-bottom: 0.5rem;
+}
+footer {
+  background: var(--nav-bg);
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  font-size: 1rem;
+  color: #888;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+.container {
+  position: relative;
+  z-index: 2;
+}
+/* 반응형 */
+@media (max-width: 700px) {
+  .nav-container { padding: 0 0.7rem; }
+  .nav-menu { gap: 1.2rem; }
+  .section-title { font-size: 1.3rem; padding-left: 0.5rem; }
+  main { padding: 0 0.5rem; }
+  .grid { gap: 1rem; }
+} 
+#meteor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+} 
