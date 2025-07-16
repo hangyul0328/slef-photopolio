@@ -41,17 +41,35 @@ cards.forEach(card => {
 });
 
 // 타이핑 애니메이션
-const typingText = '안녕하세요. 저는 광양고등학교 2학년에 재학 중인 박한결입니다.\ncospro 3급 자격증을 취득하였으며, 가천대 조기취업학과 진학을 목표로 열심히 공부하고 있습니다.\n논리적 사고와 꾸준함을 바탕으로 성장하는 개발자가 되고자 합니다.';
+const typingLines = [
+  '안녕하세요. 저는 광양고등학교 2학년에 재학 중인 박한결입니다.',
+  'cospro 3급 자격증을 취득하였으며, 가천대 조기취업학과 진학을 목표로 열심히 공부하고 있습니다.',
+  '논리적 사고와 꾸준함을 바탕으로 성장하는 개발자가 되고자 합니다.'
+];
 const typingEl = document.getElementById('typing');
 let typingIdx = 0;
+let lineIdx = 0;
 function typingEffect() {
-  if (typingEl) {
-    typingEl.textContent = typingText.slice(0, typingIdx);
-    typingIdx++;
-    if (typingIdx <= typingText.length) {
-      setTimeout(typingEffect, 35);
+  if (!typingEl) return;
+  const currentLine = typingLines[lineIdx];
+  typingEl.innerHTML = typingLines.slice(0, lineIdx).join('<br>') + (lineIdx > 0 ? '<br>' : '') + currentLine.slice(0, typingIdx);
+  typingIdx++;
+  if (typingIdx <= currentLine.length) {
+    setTimeout(typingEffect, 35);
+  } else {
+    lineIdx++;
+    if (lineIdx < typingLines.length) {
+      typingIdx = 0;
+      setTimeout(typingEffect, 400);
     } else {
       typingEl.classList.add('caret');
+      setTimeout(() => {
+        typingEl.classList.remove('caret');
+        typingIdx = 0;
+        lineIdx = 0;
+        typingEl.innerHTML = '';
+        setTimeout(typingEffect, 500);
+      }, 3000);
     }
   }
 }
@@ -143,4 +161,60 @@ function animateMeteor() {
   requestAnimationFrame(animateMeteor);
 }
 for (let i = 0; i < METEOR_COUNT; i++) meteors.push(createMeteor());
-animateMeteor(); 
+animateMeteor();
+
+function showIntroduceSection() {
+  const sections = ['about', 'special', 'portfolio', 'contact', 'introduce'];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (id === 'introduce') {
+      el.style.display = 'flex';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+}
+
+function showAllSections() {
+  const sections = ['about', 'special', 'portfolio', 'contact', 'introduce'];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (id === 'introduce') {
+      el.style.display = 'none';
+    } else {
+      el.style.display = '';
+    }
+  });
+}
+
+window.addEventListener('hashchange', function() {
+  if (location.hash === '#introduce') {
+    showIntroduceSection();
+  } else {
+    showAllSections();
+  }
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (location.hash === '#introduce') {
+    showIntroduceSection();
+  }
+  var backBtn = document.getElementById('back-btn');
+  if (backBtn) {
+    backBtn.onclick = function() {
+      location.hash = '';
+    };
+  }
+  // 전화번호 복사 기능
+  var phone = document.getElementById('copy-phone');
+  var msg = document.getElementById('copy-msg');
+  if (phone && msg) {
+    phone.onclick = function() {
+      navigator.clipboard.writeText(phone.textContent.trim());
+      msg.style.display = 'inline';
+      setTimeout(function() { msg.style.display = 'none'; }, 1500);
+    };
+  }
+}); 

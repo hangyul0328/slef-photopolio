@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introduce</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      min-height: 100vh;
+      color: #fff;
+      font-size: 2rem;
+      font-family: 'Noto Sans KR', 'Pretendard', Arial, sans-serif;
+      margin: 0;
+      background: none;
+    }
+    #meteor-canvas {
+      position: fixed;
+      top: 0; left: 0; width: 100vw; height: 100vh;
+      z-index: 0;
+      pointer-events: none;
+    }
+    .center-text {
+      position: relative;
+      z-index: 0;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="meteor-canvas"></canvas>
+  <script src="script.js"></script>
+</body>
+</html> 

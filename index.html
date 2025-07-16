@@ -20,6 +20,7 @@
       <div class="nav-profile"></div>
     </div>
   </nav>
+  <!-- 중앙 목차(nav, side-toc) 모두 제거 -->
   <main style="z-index:1; position:relative;">
     <section id="about" class="fade-in">
       <h2 class="section-title">소개</h2>
@@ -43,11 +44,11 @@
                 <img src="1111.png" alt="Notion 로고">
               </a>
               <h3>Notion</h3>
-              <p>반응형 웹사이트 개발</p>
+              <p></p>
             </div>
             <div class="card-back">
-              <h4>Notion 포트폴리오</h4>
-              <p>자세한 내용은 Notion에서 확인하세요.</p>
+              <h4>Summary</h4>
+              <p>코딩하며 배운것</p>
               <a href="https://www.notion.so/1908284e0b8f80f6b7bed5b9c91c01ce" target="_blank" class="portfolio-link">바로가기</a>
             </div>
           </div>
@@ -56,28 +57,30 @@
           <div class="card-inner">
             <div class="card-front">
               <a href="https://github.com/hangyul0328/google-ai-bible.git" target="_blank">
-                <img src="2222.jpeg" alt="디지털 성경">
+                <img src="2222.jpg" alt="디지털 성경">
               </a>
-              <h3>디지털 성경(영어로)</h3>
-              <p>UI/UX 디자인 개선</p>
+              <h3>Digital Bible
+              </h3>
+              <p></p>
             </div>
             <div class="card-back">
-              <h4>디지털 성경(영어로)</h4>
-              <p>영어 성경 데이터와 AI 활용 프로젝트.<br>깃허브에서 소스 확인 가능.</p>
-              <a href="https://github.com/hangyul0328/google-ai-bible.git" target="_blank" class="portfolio-link">깃허브 바로가기</a>
+              <h4>Summary </h4>
+              <p>직접 만든 프로잭트</p>
+              <a href="https://github.com/hangyul0328/google-ai-bible.git" target="_blank" class="portfolio-link">바로가기</a>
             </div>
           </div>
         </div>
         <div class="card">
           <div class="card-inner">
             <div class="card-front">
-              <img src="https://placehold.co/300x200" alt="프로젝트3">
-              <h3>프로젝트 3</h3>
-              <p>인터랙티브 대시보드 구현</p>
+              <img src="3333.jpg" alt="My Journey">
+              <h3>My Journey</h3>
+              <p></p>
             </div>
             <div class="card-back">
-              <h4>프로젝트 3</h4>
-              <p>대시보드, 차트, 인터랙션 등 다양한 기능 구현.</p>
+              <h4>Summary</h4>
+              <p>살며 이룬 여러 일들 기록</p>
+              <a href="#introduce" class="portfolio-link">바로가기</a>
             </div>
           </div>
         </div>
@@ -86,13 +89,17 @@
     <section id="contact" class="fade-in">
       <h2 class="section-title">연락처</h2>
       <ul class="contact-list">
-        <li><strong>Email:</strong> idkeng1357@Gmail.com</li>
-        <li><strong>전화번호:</strong> 01090626447</li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/yourid" target="_blank">github.com/yourid</a></li>
-        <li><strong>학교:</strong> 광양고등학교 2학년</li>
-        <li><strong>목표:</strong> 가천대 조기취업학과 진학</li>
+        <li><strong>Email:</strong> <a href="https://mail.google.com/mail/?view=cm&fs=1&to=idkeng1357@gmail.com" target="_blank">idkeng1357@gmail.com</a></li>
+        <li><strong>전화번호:</strong> <span id="copy-phone" style="cursor:pointer; text-decoration:underline;">010-9062-6447</span> <span id="copy-msg" style="display:none; color:#00ffae; margin-left:8px; font-size:0.95em;">복사되었습니다!</span></li>
+        <li><strong>GitHub:</strong> <a href="https://github.com/hangyul0328" target="_blank">github.com/hangyul0328</a></li>
+        <li><strong>학교:</strong> <a href="https://gwangyang.hs.jne.kr" target="_blank">광양고등학교 2학년</a></li>
+        <li><strong>목표:</strong> <a href="https://www.gachon.ac.kr/kor/977/subview.do" target="_blank">가천대 조기취업학과 진학</a></li>
         <li><strong>자격증:</strong> cospro 3급</li>
       </ul>
+    </section>
+    <section id="introduce" class="fade-in" style="display:none; min-height: 80vh; align-items: center; justify-content: center; flex-direction: column;">
+      <h2 class="section-title">Introduce Page</h2>
+      <button id="back-btn" style="position:fixed; left:50%; bottom:80px; transform:translateX(-50%); margin-top:0; padding: 0.8em 2em; font-size:1.1rem; border-radius:2em; border:none; background:var(--accent,#0050ff); color:#fff; font-weight:700; cursor:pointer; box-shadow:0 2px 8px #0050ff; z-index:99999;">뒤로가기</button>
     </section>
   </main>
   <footer style="z-index:2; position:relative;">
@@ -101,5 +108,6 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <canvas id="cursor-canvas"></canvas>
 </body>
 </html> 
