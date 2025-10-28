@@ -55,25 +55,29 @@ function typingEffect() {
   typingEl.innerHTML = typingLines.slice(0, lineIdx).join('<br>') + (lineIdx > 0 ? '<br>' : '') + currentLine.slice(0, typingIdx);
   typingIdx++;
   if (typingIdx <= currentLine.length) {
-    setTimeout(typingEffect, 35);
+    setTimeout(typingEffect, 20);
   } else {
     lineIdx++;
     if (lineIdx < typingLines.length) {
       typingIdx = 0;
-      setTimeout(typingEffect, 400);
+      setTimeout(typingEffect, 200);
     } else {
       typingEl.classList.add('caret');
-      setTimeout(() => {
-        typingEl.classList.remove('caret');
-        typingIdx = 0;
-        lineIdx = 0;
-        typingEl.innerHTML = '';
-        setTimeout(typingEffect, 500);
-      }, 3000);
     }
   }
 }
 typingEffect();
+
+// 스크롤 시 내비게이션 표시
+const nav = document.querySelector('nav');
+let hasScrolled = false;
+
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 50 && !hasScrolled) {
+    nav.classList.add('visible');
+    hasScrolled = true;
+  }
+});
 
 // 부드러운 스크롤 내비게이션
 

@@ -7,14 +7,13 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <canvas id="meteor-canvas"></canvas>
   <nav style="z-index:2; position:fixed; width:100%;">
     <div class="nav-container">
       <div class="nav-left">HAN GYEOL</div>
       <div class="nav-menu">
         <a href="#about">소개</a>
-        <a href="#skills">기술</a>
-        <a href="#portfolio">포트폴리오</a>
+        <a href="#journey">여정</a>
+        <a href="#portfolio">작품</a>
         <a href="#contact">연락처</a>
       </div>
       <div class="nav-profile"></div>
@@ -23,41 +22,53 @@
   <!-- 중앙 목차(nav, side-toc) 모두 제거 -->
   <main style="z-index:1; position:relative;">
     <section id="about" class="fade-in">
-      <h2 class="section-title">안녕하세요, 박한결입니다</h2>
+      <h2 class="section-title">Hello, World!</h2>
       <p><span class="typing" id="typing"></span></p>
     </section>
 
-    <section id="skills" class="fade-in">
-      <h2 class="section-title">기술 스택</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">💻</div>
-          <h3>Programming</h3>
-          <p>Python, JavaScript, HTML/CSS</p>
+    <section id="journey" class="fade-in">
+      <h2 class="section-title">My Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item color1">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <div class="timeline-title">초등학교 4학년 - 엔트리 블록 코딩</div>
+            <div class="timeline-desc">학교 수업에서 엔트리 블록 코딩을 접하며 코딩에 흥미를 느끼게 됨</div>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">🎨</div>
-          <h3>Design</h3>
-          <p>UI/UX, Responsive Design</p>
+        <div class="timeline-item color2">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <div class="timeline-title">초등학교 고학년 - 대쉬 코딩봇</div>
+            <div class="timeline-desc">대쉬 코딩봇을 접하며 다시 코딩에 대한 호기심이 생김</div>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">🛠️</div>
-          <h3>Tools</h3>
-          <p>Git, VS Code, Notion</p>
+        <div class="timeline-item color3">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <div class="timeline-title">중학교 2학년 - 마인크래프트 커맨드</div>
+            <div class="timeline-desc">대회를 위한 마인크래프트 맵 제작하며 커맨드를 활용, 코딩에 대한 궁금증이 더욱 증가함</div>
+          </div>
+        </div>
+        <div class="timeline-item color4">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <div class="timeline-title">고등학교 1학년 - 파이썬 학습</div>
+            <div class="timeline-desc">학교 수업으로 파이썬을 배우며 코딩의 재미와 무궁무진한 가능성을 깨달음</div>
+          </div>
+        </div>
+        <div class="timeline-item color1">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-content">
+            <div class="timeline-title">현재 (고등학교 2학년) - 자격증 및 작품 활동</div>
+            <div class="timeline-desc">cospro 3급 자격증을 취득하고 다양한 작품을 만들며 코딩의 매력에 빠지게 됨</div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="special" class="fade-in">
-      <h2 class="section-title">특기사항</h2>
-      <ul>
-        <li>cospro 3급 자격증 취득</li>
-        <li>가천대 조기취업학과 진학 목표</li>
-        <li>프로그래밍 및 논리적 사고에 강점</li>
-      </ul>
-    </section>
     <section id="portfolio" class="fade-in">
-      <h2 class="section-title">포트폴리오</h2>
+      <h2 class="section-title">나의 작품</h2>
       <div class="grid">
         <div class="card">
           <div class="card-inner">
@@ -92,20 +103,6 @@
             </div>
           </div>
         </div>
-        <div class="card">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="3333.jpg" alt="My Journey">
-              <h3>My Journey</h3>
-              <p></p>
-            </div>
-            <div class="card-back">
-              <h4>나의 여정</h4>
-              <p>지금까지 살아오면서 이룬 성취와 경험들을 타임라인 형태로 정리한 페이지입니다. 제 성장 과정을 한눈에 볼 수 있습니다.</p>
-              <a href="#introduce" class="portfolio-link">자세히 보기</a>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
     <section id="contact" class="fade-in">
@@ -119,9 +116,46 @@
         <li><strong>자격증:</strong> cospro 3급</li>
       </ul>
     </section>
-    <section id="introduce" class="fade-in" style="display:none; min-height: 80vh; align-items: center; justify-content: center; flex-direction: column;">
-      <h2 class="section-title">Introduce Page</h2>
-      <button id="back-btn" style="position:fixed; left:50%; bottom:80px; transform:translateX(-50%); margin-top:0; padding: 0.8em 2em; font-size:1.1rem; border-radius:2em; border:none; background:var(--accent,#0050ff); color:#fff; font-weight:700; cursor:pointer; box-shadow:0 2px 8px #0050ff; z-index:99999;">뒤로가기</button>
+    <section id="introduce" class="fade-in" style="display:none;">
+      <h2 class="section-title">My Journey</h2>
+      <div class="timeline">
+        <div class="timeline-item color1">
+          <div class="timeline-dot">1</div>
+          <div class="timeline-content">
+            <div class="timeline-title">초등학교 4학년 - 엔트리 블록 코딩</div>
+            <div class="timeline-desc">학교 수업에서 엔트리 블록 코딩을 접하며 코딩에 흥미를 느끼게 됨</div>
+          </div>
+        </div>
+        <div class="timeline-item color2">
+          <div class="timeline-dot">2</div>
+          <div class="timeline-content">
+            <div class="timeline-title">초등학교 고학년 - 대쉬 코딩봇</div>
+            <div class="timeline-desc">대쉬 코딩봇을 접하며 다시 코딩에 대한 호기심이 생김</div>
+          </div>
+        </div>
+        <div class="timeline-item color3">
+          <div class="timeline-dot">3</div>
+          <div class="timeline-content">
+            <div class="timeline-title">중학교 2학년 - 마인크래프트 커맨드</div>
+            <div class="timeline-desc">대회를 위한 마인크래프트 맵 제작하며 커맨드를 활용, 코딩에 대한 궁금증이 더욱 증가함</div>
+          </div>
+        </div>
+        <div class="timeline-item color4">
+          <div class="timeline-dot">4</div>
+          <div class="timeline-content">
+            <div class="timeline-title">고등학교 1학년 - 파이썬 학습</div>
+            <div class="timeline-desc">학교 수업으로 파이썬을 배우며 코딩의 재미와 무궁무진한 가능성을 깨달음</div>
+          </div>
+        </div>
+        <div class="timeline-item color1">
+          <div class="timeline-dot">5</div>
+          <div class="timeline-content">
+            <div class="timeline-title">현재 (고등학교 2학년) - 자격증 및 작품 활동</div>
+            <div class="timeline-desc">cospro 3급 자격증을 취득하고 다양한 작품을 만들며 코딩의 매력에 빠지게 됨</div>
+          </div>
+        </div>
+      </div>
+      <button id="back-btn" style="position:fixed; left:50%; bottom:80px; transform:translateX(-50%); margin-top:0; padding: 0.8em 2em; font-size:1.1rem; border-radius:2em; border:none; background:var(--accent-primary); color:#fff; font-weight:700; cursor:pointer; box-shadow:0 2px 8px rgba(0,0,0,0.1); z-index:99999;">뒤로가기</button>
     </section>
   </main>
   <footer style="z-index:2; position:relative;">
